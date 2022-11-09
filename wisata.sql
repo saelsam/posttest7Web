@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2022 at 04:04 PM
+-- Generation Time: Nov 09, 2022 at 05:28 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `wisata`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `akun`
+--
+
+CREATE TABLE `akun` (
+  `id` int(20) NOT NULL,
+  `nama` varchar(20) NOT NULL,
+  `email` varchar(20) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `konfirmasi` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `akun`
+--
+
+INSERT INTO `akun` (`id`, `nama`, `email`, `username`, `password`, `konfirmasi`) VALUES
+(1, 'sael', 'saelsamuelrude@gmail', 'sam', '$2y$10$J2yKe2pUhiPa6F8Ro1AiEuELa9Jy1Doyo792a79Aj7wK4OuYPtxxS', ''),
+(2, 'sael', 'saelsamuelrude@gmail', 'saelsam', '$2y$10$f/qIXAUuuDzEwE2DZ5UKh.f.cdYswUBv56LZKPb1YoD46Z4oUM2PC', '');
 
 -- --------------------------------------------------------
 
@@ -43,10 +66,10 @@ CREATE TABLE `pemesanan` (
 --
 
 INSERT INTO `pemesanan` (`id`, `nama`, `ktp`, `telpon`, `alamat`, `foto`, `tujuan`, `waktu`) VALUES
-(5, 'sael', 0, 2147483647, 0, '', 'abc', ''),
 (10, 'budi', 62, 9123, 0, '', 'abc', ''),
 (11, '', 0, 0, 0, '', '', ''),
-(12, 'budi utomo', 729127827, 91326228, 0, '', 'parinding', '');
+(27, 'sael', 0, 0, 0, '', '', ''),
+(28, 'sael', 0, 9123, 0, '', 'smd', '2022-11-23');
 
 -- --------------------------------------------------------
 
@@ -78,11 +101,20 @@ INSERT INTO `tujuan` (`id`, `nama`, `tujuan`) VALUES
 (11, 'Sael Samuel Rude', ''),
 (12, 'sael', ''),
 (13, 'budi utomo', ''),
-(14, 'sss', '');
+(14, 'sss', ''),
+(15, '', ''),
+(16, 'sael', ''),
+(17, 'sael', 'smd');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `akun`
+--
+ALTER TABLE `akun`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pemesanan`
@@ -101,16 +133,22 @@ ALTER TABLE `tujuan`
 --
 
 --
+-- AUTO_INCREMENT for table `akun`
+--
+ALTER TABLE `akun`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `pemesanan`
 --
 ALTER TABLE `pemesanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `tujuan`
 --
 ALTER TABLE `tujuan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
